@@ -11,3 +11,5 @@ opencv-python 3.3.0+contrib
 
 Pretrained model: https://github.com/Tony607/Keras_age_gender/releases/download/V1.0/weights.18-4.06.hdf5
 Download the model and save it under "pretrained_models" folder.
+
+Also, create a folder "video_files" and store the video(s) you want to run the model for in it.
