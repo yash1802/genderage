@@ -1,3 +1,7 @@
+'''
+Usage: python age_estimation.py --video "<video file's name with extension>" (The file MUST be within the "video_files" folder)
+'''
+
 import os
 import cv2
 from wide_resnet import WideResNet
@@ -8,7 +12,6 @@ import argparse
 
 HAARCASSCADE_PATH = ".\\pretrained_models\\haarcascade_frontalface_alt.xml"
 WEIGHTS_PATH = ".\\pretrained_models\\weights.18-4.06.hdf5"  #depth=16, width=8 in init function under class AgeGender
-#WEIGHTS_PATH = ".\\pretrained_models\\WRN - 40 - 4.h5" #depth=40, width=4 in init function under class AgeGender
 
 
 def labeling(cropped_frame, point, label, font=cv2.FONT_HERSHEY_SIMPLEX, font_scale=1, thickness=2):
@@ -136,12 +139,6 @@ def main():
         ag = AgeGender(depth=depth, width=width)
         ag.detect_face(video, outpath_path)
         os.system(outpath_path)
-
-
-'''
-Usage: 
-For taking a video file as input: python age_estimation.py --video "<video file name with extension and under quotes>"
-'''
 
 
 if __name__ == "__main__":
